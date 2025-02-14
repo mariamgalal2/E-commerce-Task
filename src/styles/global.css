@@ -1,0 +1,107 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    @apply flex items-center justify-center min-h-screen bg-gray-100;
+    /* Center content vertically and horizontally */
+}
+
+/* Navbar */
+.nav-button {
+    @apply px-4 py-2 bg-transparent text-white font-semibold rounded-lg shadow-lg transition-all duration-300 transform hover:scale-105 border border-white;
+}
+
+.nav-button:hover {
+    @apply bg-green-600 shadow-xl text-white;
+}
+
+.nav-button:active {
+    @apply scale-95;
+}
+
+.navbar {
+    @apply fixed top-0 left-0 right-0 z-50 bg-blue-500 py-4 px-6 shadow-lg flex items-center;
+    background: linear-gradient(to right, #2563eb, #1e3a8a);
+    /* Gradient for a sleek effect */
+}
+
+.navbar h1 {
+    @apply text-3xl text-white font-bold tracking-wide;
+}
+
+.nav-right {
+    @apply flex items-center gap-6 ml-auto;
+    /* Push elements to the right with spacing */
+}
+
+.dropdown {
+    @apply nav-button text-gray-700 border-gray-400 shadow-md;
+}
+
+.dropdown-item {
+    @apply bg-gray-300 text-gray-700 px-4 py-2 block;
+}
+
+.dropdown-item:hover {
+    @apply bg-gray-500 text-white;
+}
+
+.createButton {
+    @apply nav-button;
+}
+
+.cartButton {
+    @apply nav-button;
+}
+
+/* Category Slider */
+.category-slider-container {
+    @apply w-full mt-16;
+    /* Adjust the value based on the navbar's height */
+}
+
+.category-slider {
+    @apply w-full overflow-hidden relative z-10;
+}
+
+.category-slide {
+    @apply h-20 bg-blue-500 text-white text-3xl font-bold uppercase;
+}
+
+.category-slide div {
+    @apply flex items-center justify-center h-full;
+}
+
+/* Products Grid*/
+.product-grid-container {
+    @apply mx-auto flex flex-col items-center bg-white border border-gray-300 rounded-2xl shadow-lg p-8 md:max-w-3xl lg:max-w-4xl xl:max-w-5xl hover:shadow-xl transition-all duration-300 ease-in-out mt-10;
+    background: linear-gradient(to bottom, #ffffff, #f7f9fc);
+}
+
+.product-grid {
+    @apply pt-6 px-6 grid grid-cols-1 sm:grid-cols-2 gap-6;
+}
+
+/* Pagination */
+.pagination {
+    @apply mt-6 flex justify-center items-center gap-4;
+}
+
+.pagination button {
+    @apply px-4 py-2 bg-gray-300 rounded hover:bg-gray-400 disabled:opacity-50;
+}
+
+/* Loading & Error Messages */
+.loading-message {
+    @apply text-center text-gray-600;
+}
+
+.error-message {
+    @apply text-center text-red-600;
+}
+
+/* Background Image */
+.background-image {
+    @apply w-full h-96 object-cover block;
+}

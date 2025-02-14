@@ -1,0 +1,35 @@
+.cart-page {
+  @apply p-6 max-w-screen-lg mx-auto;
+}
+
+.cart-items {
+  @apply space-y-6;
+}
+
+.cart-item {
+  @apply flex items-center space-x-4 p-4 border border-gray-200 rounded-lg shadow-sm;
+}
+
+.cart-item-image {
+  @apply w-32 h-32 object-cover;
+}
+
+.cart-item-details {
+  @apply flex-1;
+}
+
+.quantity {
+  @apply flex items-center space-x-2 mt-2;
+}
+
+.quantity button {
+  @apply bg-gray-200 text-xl px-3 py-1 rounded-md;
+}
+
+.remove-btn {
+  @apply mt-2 bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-600;
+}
+
+.total-price {
+  @apply mt-6 text-xl font-bold text-right;
+}
