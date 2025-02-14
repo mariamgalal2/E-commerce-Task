@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
-import { useCart } from "../cartContext"; // Import CartContext
+import { useCart } from "../context/cartContext"; // Import CartContext
 import "../styles/productDetails.css"; // Import the new CSS file
 
 const ProductDetails = () => {

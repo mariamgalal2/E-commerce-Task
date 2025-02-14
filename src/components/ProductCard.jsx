@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { useCart } from "../cartContext"; // Import the useCart hook to access addToCart function
+import { useCart } from "../context/cartContext"; // Import the useCart hook to access addToCart function
 import "../styles/productCard.css"; // Import the new TailwindCSS file
 
 const ProductCard = ({ product }) => {

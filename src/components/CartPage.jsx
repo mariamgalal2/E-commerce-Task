@@ -1,5 +1,5 @@
 import React from "react";
-import { useCart } from "../cartContext"; 
+import { useCart } from "../context/cartContext"; 
 import "../styles/cartPage.css"; // Import the external Tailwind CSS file
 
 const CartPage = () => {

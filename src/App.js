@@ -4,7 +4,7 @@ import ProductList from "./components/ProductList";
 import ProductDetails from "./components/ProductDetails";
 import CreateProduct from "./components/CreateProduct";
 import CartPage from "./components/CartPage"; // Import Cart Page component
-import { CartProvider } from "./cartContext"; // Import CartContext
+import { CartProvider } from "./context/cartContext"; // Import CartContext
 import "./styles/global.css";
 
 const App = () => {
