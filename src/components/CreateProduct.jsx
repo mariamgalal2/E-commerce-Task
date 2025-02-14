@@ -24,23 +24,28 @@ const CreateProduct = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (loading) return; // Prevents multiple submissions
+
     setLoading(true);
     setError("");
     setSuccess(false);
 
-    if (!title || !description || !price || !category || !image) {
+    // Trim input values to prevent spaces-only submissions
+    if (!title.trim() || !description.trim() || !price.trim() || !category || !image.trim()) {
       setError("All fields are required.");
       setLoading(false);
       return;
     }
 
-    if (parseFloat(price) <= 0) {
-      setError("Price must be a positive number.");
+    // Ensure price is a valid number
+    const parsedPrice = parseFloat(price);
+    if (isNaN(parsedPrice) || parsedPrice <= 0) {
+      setError("Price must be a valid positive number.");
       setLoading(false);
       return;
     }
 
-    const newProduct = { title, description, price, category, image };
+    const newProduct = { title: title.trim(), description: description.trim(), price: parsedPrice, category, image: image.trim() };
 
     try {
       const response = await fetch("https://fakestoreapi.com/products", {
@@ -58,6 +63,9 @@ const CreateProduct = () => {
       setCategory("");
       setImage("");
 
+      // Automatically navigate back after 2 seconds
+      setTimeout(() => navigate("/"), 2000);
+
     } catch (err) {
       setError(err.message);
     } finally {
@@ -69,7 +77,7 @@ const CreateProduct = () => {
     <div className="create-product-container">
       <h2>Create Product</h2>
       {error && <p className="error-message">{error}</p>}
-      {success && <p className="success-message">Product created successfully!</p>}
+      {success && <p className="success-message">Product created successfully! Redirecting...</p>}
 
       <form onSubmit={handleSubmit}>
         <input type="text" placeholder="Title" value={title} onChange={(e) => setTitle(e.target.value)} required />
