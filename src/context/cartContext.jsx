@@ -25,7 +25,7 @@ export const CartProvider = ({ children }) => {
   };
 
   const getTotalPrice = () => {
-    return cart.reduce((total, item) => total + item.price * (item.quantity || 1), 0);
+    return (Math.round(cart.reduce((total, item) => total + item.price * (item.quantity || 1), 0)*10)/10).toString();
   };
 
   return (
